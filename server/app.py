@@ -5,7 +5,7 @@ import string
 from flask_cors import CORS 
 app = Flask(__name__)
 
-CORS(app, resources={r"/generate-ids": {"origins": "http://localhost:5173"}})  # Enable CORS for all routes
+CORS(app) # Enable CORS for all routes
 @app.route('/generate-ids', methods=['POST'])
 def generate_ids():
     data = request.get_json()
